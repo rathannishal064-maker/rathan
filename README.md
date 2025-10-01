@@ -130,25 +130,19 @@ a[href*="rathan"] {
     text-shadow: 0 0 6px #fff, 0 0 12px #ff69b4;
   }
 }
-.typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #fff;
-  animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
+.pop-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: popIn 1s ease-out forwards;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-
-  </style>
+</style>
 </head>
 <body>
 
