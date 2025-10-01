@@ -4,8 +4,9 @@
   <base target="_self">
   <title>Cute Kitty Love</title>
   <style>
-    a[href*="github.com/rathan"] {
-  display: none;
+   a {
+  display: none !important;
+}
 }
     body {
       margin: 0;
