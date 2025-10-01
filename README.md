@@ -14,6 +14,9 @@
       min-height: 100vh;
       overflow: hidden;
     }
+a[href*="rathan"] {
+  display: none !important;
+}
 
     .page { display: none; }
     .active { display: block; }
