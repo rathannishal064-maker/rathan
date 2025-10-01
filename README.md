@@ -7,18 +7,15 @@
       margin: 0;
       padding: 0;
       font-family: "Comic Sans MS", cursive, sans-serif;
-      /* INCREASED FONT SIZE HERE */
       font-size: 1.2em; 
       background: pink;
       color: #fff;
       text-align: center;
-      /* Make sure the body is full screen for jumping */
       min-height: 100vh; 
       overflow: hidden;
     }
     .page { display: none; }
     .active { display: block; }
-
     h1, h2, h3 {
       text-shadow: 2px 2px 5px #ff69b4;
     }
@@ -31,7 +28,6 @@
       width: 100px; 
       height: 44px;
       line-height: 20px; 
-      
       font-size: 18px;
       color: white;
       cursor: pointer;
@@ -42,14 +38,12 @@
       touch-action: manipulation;
     }
     button:hover { background: #ff1493; }
-
     #noBtn { 
         position: absolute;
         transition: none; 
         bottom: 10px;
         right: 10px;
     } 
-
     img {
       max-width: 250px;
       margin-top: 20px;
@@ -58,9 +52,7 @@
     @keyframes bounce {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-15px) scale(1.05); }
-    }
-
-    
+    } 
     .heart {
       position: absolute;
       color: red;
@@ -72,7 +64,6 @@
       from { transform: translateY(100vh); opacity: 1; }
       to { transform: translateY(-10vh); opacity: 0; }
     }
-
     .sparkle {
       background: linear-gradient(90deg, #ff69b4, #fff, #ff69b4, #fff);
       -webkit-background-clip: text;
@@ -95,7 +86,6 @@
   <source src="ratan tata 1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
     <br>
     <button id="yesBtn">Yes 💖</button>
     <button id="noBtn">No 🙈</button>
@@ -106,7 +96,6 @@
   <source src="ratan tata 2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
     <h2>Yesss thank youuu ❤</h2>
     <h3>Trust me we are gonna make it 💍<br>
     We will end up in marriage in peace 🕊❤</h3>
