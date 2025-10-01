@@ -24,26 +24,18 @@
 
     h1, h2, h3 {
       text-shadow: 2px 2px 5px #ff69b4;
-    }
-    button {
-      background: #ff69b4;
-      border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      border-radius: 20px;
-      width: 100px; 
-      height: 44px;
-      line-height: 20px; 
-      
-      font-size: 18px;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s; 
-      z-index: 10; 
-      user-select: none;
-      -webkit-user-select: none; 
-      touch-action: manipulation;
-    }
+   button {
+  background: #ff69b4;
+  border: none;
+  padding: 12px 32px;
+  margin: 10px;
+  border-radius: 20px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 120px;
+}
     button:hover { background: #ff1493; }
 
     #noBtn { 
