@@ -108,18 +108,29 @@ a[href*="rathan"] {
   overflow: hidden;
   pointer-events: none;
 }
-.slide-up {
+.pop-glow {
   opacity: 0;
-  transform: translateY(30px);
-  animation: slideUpFade 2s ease-out forwards;
+  transform: scale(0.9);
+  animation: popGlow 1.2s ease-out forwards;
 }
 
-@keyframes slideUpFade {
-  to {
+@keyframes popGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    text-shadow: none;
+  }
+  60% {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 6px #fff, 0 0 12px #ff69b4;
   }
 }
+
 
   </style>
 </head>
@@ -153,7 +164,7 @@ a[href*="rathan"] {
       Your browser does not support the video tag.
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="slide-up">Happy Birthday Yams 🎂✨<br>
+    <h3 class="pop-glow">Happy Birthday Yams 🎂✨<br>
 Have a great year, stay happy gurl, Ly ❤</h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
