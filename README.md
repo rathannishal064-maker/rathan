@@ -32,23 +32,21 @@
       text-shadow: 2px 2px 5px #ff69b4;
     }
 
-   button {
+  button {
   background: #ff69b4;
   border: none;
   padding: 12px 24px;
   margin: 10px;
   border-radius: 20px;
-  min-width: 120px;
-  height: auto;
   font-size: 18px;
-  line-height: 1.2;
   color: white;
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 #page3 button {
