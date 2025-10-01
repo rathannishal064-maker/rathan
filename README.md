@@ -14,9 +14,16 @@
       min-height: 100vh;
       overflow: hidden;
     }
-a[href*="rathan"] {
-  display: none !important;
-}
+
+    a[href*="rathan"] {
+      display: none !important;
+      position: absolute;
+      top: -9999px;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
     .page { display: none; }
     .active { display: block; }
@@ -79,70 +86,36 @@ a[href*="rathan"] {
       to { transform: translateY(-10vh); opacity: 0; }
     }
 
-    .sparkle {
-      background: linear-gradient(50deg, #ff69b4, #fff, #ff69b4, #fff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 100% auto;
-      animation: shine 1s linear infinite;
+    .pop-in {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: popIn 1s ease-out forwards;
     }
 
-    @keyframes shine {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
-    /* 👇 Hide GitHub's injected profile link */
-    body > a[href*="rathan"] {
-      display: none !important;
-      position: absolute;
-      top: -9999px;
-    } 
-    body > a[href*="rathan"] {
-  display: none !important;
-  position: absolute;
-  top: -9999px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.pop-glow {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: popGlow 1.2s ease-out forwards;
-}
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
+    }
 
-@keyframes popGlow {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-    text-shadow: none;
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05);
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 0 0 6px #fff, 0 0 12px #ff69b4;
-  }
-}
-.pop-in {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: popIn 1s ease-out forwards;
-}
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
 
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-</style>
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
 </head>
 <body>
 
@@ -174,9 +147,9 @@ a[href*="rathan"] {
       Your browser does not support the video tag.
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="pop-glow">
-  <span class="typewriter">Happy Birthday Yams 🎂✨ Have a great year, stay happy gurl, Ly ❤</span>
-</h3>
+    <h3 class="pop-in">
+      <span class="typewriter">Happy Birthday Yams 🎂✨ Have a great year, stay happy gurl, Ly ❤</span>
+    </h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
 
