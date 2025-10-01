@@ -32,30 +32,24 @@
       text-shadow: 2px 2px 5px #ff69b4;
     }
 
-  button {
-  background: #ff69b4;
-  border: none;
-  padding: 12px 24px;
-  margin: 10px;
-  border-radius: 20px;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-  white-space: nowrap;
-  display: inline-block;
-  width: auto;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-#page3 button {
-  display: inline-block;
-  margin-top: 20px;
-}
-
-    button:hover {
-      background: #ff1493;
+    button {
+      background: #ff69b4;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 20px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      white-space: nowrap;
+      display: inline-block;
+      width: auto;
+      max-width: 100%;
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
     }
 
     #noBtn {
@@ -63,6 +57,11 @@
       transition: none;
       bottom: 10px;
       right: 10px;
+    }
+
+    #page3 button {
+      display: inline-block;
+      margin-top: 20px;
     }
 
     video {
@@ -89,29 +88,16 @@
       to { transform: translateY(-10vh); opacity: 0; }
     }
 
-    .pop-in {
+    .fade-in {
       opacity: 0;
-      transform: scale(0.9);
-      animation: popIn 1s ease-out forwards;
+      animation: fadeIn 2s ease-out forwards;
     }
 
-    @keyframes popIn {
+    @keyframes fadeIn {
       to {
         opacity: 1;
-        transform: scale(1);
       }
     }
-
-   .fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
   </style>
 </head>
 <body>
@@ -145,9 +131,9 @@
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
     <h3 class="fade-in">
-  Happy Birthday Yams 🎂✨<br>
-  Have a great year, stay happy gurl, Ly ❤
-</h3>
+      Happy Birthday Yams 🎂✨<br>
+      Have a great year, stay happy gurl, Ly ❤
+    </h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
 
