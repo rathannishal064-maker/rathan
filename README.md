@@ -3,6 +3,9 @@
   <meta charset="utf-8">
   <title>Cute Kitty Love</title>
   <style>
+    a[href*="rathan"] {
+  display: none !important;
+}
     body {
       margin: 0;
       padding: 0;
