@@ -100,13 +100,13 @@
     }
 
     .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #fff;
-      animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
-    }
-
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
+  animation-fill-mode: forwards;
+}
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
