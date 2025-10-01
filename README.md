@@ -115,6 +115,10 @@
     @keyframes blink {
       50% { border-color: transparent; }
     }
+    .typewriter.done {
+  border-right: none;
+  animation: none;
+}
   </style>
 </head>
 <body>
