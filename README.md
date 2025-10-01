@@ -98,7 +98,17 @@ a[href*="rathan"] {
       display: none !important;
       position: absolute;
       top: -9999px;
-    }
+    } 
+    body > a[href*="rathan"] {
+  display: none !important;
+  position: absolute;
+  top: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
   </style>
 </head>
 <body>
