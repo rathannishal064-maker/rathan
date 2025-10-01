@@ -51,13 +51,17 @@
       -webkit-user-select: none;
       touch-action: manipulation;
     }
+#noBtn {
+  position: absolute;
+  width: 100px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 18px;
+  padding: 0;
+  transition: top 0.2s ease, left 0.2s ease;
+  overflow: hidden;
+}
 
-    #noBtn {
-      position: absolute;
-      transition: none;
-      bottom: 10px;
-      right: 10px;
-    }
 
     #page3 button {
       display: inline-block;
@@ -141,10 +145,12 @@
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
 
-    function jumpButton() {
-      noBtn.style.top = Math.random() * window.innerHeight * 0.75 + "px";
-      noBtn.style.left = Math.random() * window.innerWidth * 0.75 + "px";
-    }
+   function jumpButton() {
+  const maxTop = window.innerHeight - noBtn.offsetHeight;
+  const maxLeft = window.innerWidth - noBtn.offsetWidth;
+  noBtn.style.top = Math.random() * maxTop + "px";
+  noBtn.style.left = Math.random() * maxLeft + "px";
+}
 
     noBtn.addEventListener("mouseover", jumpButton);
     noBtn.addEventListener("touchstart", jumpButton);
