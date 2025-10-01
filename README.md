@@ -14,15 +14,28 @@
       text-align: center;
       min-height: 100vh;
       overflow: hidden;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      background: pink;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+
+    .active {
+      display: flex;
+    }
+
     h1, h2, h3 {
       text-shadow: 2px 2px 5px #ff69b4;
       margin: 10px;
     }
+
     button {
       background: #ff69b4;
       border: none;
@@ -34,23 +47,28 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     button:hover {
       background: #ff1493;
     }
+
     #noBtn {
       position: absolute;
       bottom: 10px;
       right: 10px;
     }
+
     video {
       max-width: 250px;
       margin-top: 20px;
       animation: bounce 1.5s infinite ease-in-out;
     }
+
     @keyframes bounce {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-15px) scale(1.05); }
     }
+
     .heart {
       position: absolute;
       color: red;
@@ -58,14 +76,17 @@
       animation: floatUp 5s linear infinite;
       z-index: 1;
     }
+
     @keyframes floatUp {
       from { transform: translateY(100vh); opacity: 1; }
       to { transform: translateY(-10vh); opacity: 0; }
     }
+
     .fade-glow {
       opacity: 0;
       animation: fadeInGlow 3s ease forwards;
     }
+
     @keyframes fadeInGlow {
       0% { opacity: 0; text-shadow: none; }
       100% {
@@ -73,9 +94,6 @@
         text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
       }
     }
-
-    .page { display: none; }
-    .active { display: block; }
   </style>
 </head>
 <body>
@@ -108,7 +126,7 @@
       Your browser does not support the video tag.
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="fade-glow">Happy Birthday Yams 🎂✨<br>
+    <h3 id="birthdayMsg">Happy Birthday Yams 🎂✨<br>
     Have a great year, stay happy gurl, Ly ❤</h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
@@ -136,7 +154,14 @@
 
     function showPage(pageId) {
       document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-      document.getElementById(pageId).classList.add("active");
+      const nextPage = document.getElementById(pageId);
+      nextPage.classList.add("active");
+
+      // Trigger glow animation only on page3
+      if (pageId === "page3") {
+        const msg = document.getElementById("birthdayMsg");
+        msg.classList.add("fade-glow");
+      }
     }
 
     function startCountdown() {
