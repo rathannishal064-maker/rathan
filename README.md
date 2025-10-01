@@ -99,25 +99,15 @@
       }
     }
 
-    .typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #fff;
-  animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
-  animation-fill-mode: forwards;
+   .fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
 }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
 
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-    .typewriter.done {
-  border-right: none;
-  animation: none;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
   </style>
 </head>
@@ -151,9 +141,10 @@
       Your browser does not support the video tag.
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="pop-in">
-      <span class="typewriter">Happy Birthday Yams 🎂✨ Have a great year, stay happy gurl, Ly ❤</span>
-    </h3>
+    <h3 class="fade-in">
+  Happy Birthday Yams 🎂✨<br>
+  Have a great year, stay happy gurl, Ly ❤
+</h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
 
