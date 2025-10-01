@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -7,91 +8,83 @@
       margin: 0;
       padding: 0;
       font-family: "Comic Sans MS", cursive, sans-serif;
-      font-size: 1.2em;
+      /* INCREASED FONT SIZE HERE */
+      font-size: 1.2em; 
       background: pink;
       color: #fff;
       text-align: center;
-      min-height: 100vh;
+      /* Make sure the body is full screen for jumping */
+      min-height: 100vh; 
       overflow: hidden;
     }
-
-    .page {
-      display: none;
-      height: 100vh;
-      width: 100vw;
-      background: pink;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .active {
-      display: flex;
-    }
+    .page { display: none; }
+    .active { display: block; }
 
     h1, h2, h3 {
       text-shadow: 2px 2px 5px #ff69b4;
-      margin: 10px;
     }
-
     button {
       background: #ff69b4;
       border: none;
       padding: 12px 24px;
       margin: 10px;
       border-radius: 20px;
+      width: 100px; 
+      height: 44px;
+      line-height: 20px; 
+      
       font-size: 18px;
       color: white;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s; 
+      z-index: 10; 
+      user-select: none;
+      -webkit-user-select: none; 
+      touch-action: manipulation;
     }
+    button:hover { background: #ff1493; }
 
-    button:hover {
-      background: #ff1493;
-    }
+    #noBtn { 
+        position: absolute;
+        transition: none; 
+        bottom: 10px;
+        right: 10px;
+    } 
 
-    #noBtn {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-    }
-
-    video {
+    img {
       max-width: 250px;
       margin-top: 20px;
       animation: bounce 1.5s infinite ease-in-out;
     }
-
     @keyframes bounce {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-15px) scale(1.05); }
     }
 
+    
     .heart {
       position: absolute;
       color: red;
       font-size: 24px;
       animation: floatUp 5s linear infinite;
-      z-index: 1;
+      z-index: 1; 
     }
-
     @keyframes floatUp {
       from { transform: translateY(100vh); opacity: 1; }
       to { transform: translateY(-10vh); opacity: 0; }
     }
 
-    .fade-glow {
-      opacity: 0;
-      animation: fadeInGlow 3s ease forwards;
+    .sparkle {
+      background: linear-gradient(90deg, #ff69b4, #fff, #ff69b4, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% auto;
+      animation: shine 3s linear infinite;
     }
-
-    @keyframes fadeInGlow {
-      0% { opacity: 0; text-shadow: none; }
-      100% {
-        opacity: 1;
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
-      }
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
@@ -99,20 +92,22 @@
 
   <div id="page1" class="page active">
     <h1>Will you accept me? I'm still waiting... 🥺</h1>
-    <video autoplay loop muted playsinline>
-      <source src="ratan tata 1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <video width="250" autoplay loop muted playsinline>
+  <source src="ratan tata 1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
     <br>
     <button id="yesBtn">Yes 💖</button>
     <button id="noBtn">No 🙈</button>
   </div>
 
   <div id="page2" class="page">
-    <video autoplay loop muted playsinline>
-      <source src="ratan tata 2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+   <video width="250" autoplay loop muted playsinline>
+  <source src="ratan tata 2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
     <h2>Yesss thank youuu ❤</h2>
     <h3>Trust me we are gonna make it 💍<br>
     We will end up in marriage in peace 🕊❤</h3>
@@ -120,12 +115,12 @@
   </div>
 
   <div id="page3" class="page">
-    <video autoplay loop muted playsinline>
-      <source src="ratan tata 3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<video width="250" autoplay loop muted playsinline>
+  <source src="ratan tata 3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 id="birthdayMsg">Happy Birthday Yams 🎂✨<br>
+    <h3 class="sparkle">Happy Birthday Yams 🎂✨<br>
     Have a great year, stay happy gurl, Ly ❤</h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
@@ -135,15 +130,16 @@
     const yesBtn = document.getElementById("yesBtn");
 
     function jumpButton() {
-      noBtn.style.top = Math.random() * window.innerHeight * 0.75 + "px";
-      noBtn.style.left = Math.random() * window.innerWidth * 0.75 + "px";
+        noBtn.style.top = Math.random() * window.innerHeight * 0.75 + "px";
+        noBtn.style.left = Math.random() * window.innerWidth * 0.75 + "px";
     }
 
     noBtn.addEventListener("mouseover", jumpButton);
     noBtn.addEventListener("touchstart", jumpButton);
+    
     noBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      jumpButton();
+        e.preventDefault();
+        jumpButton();
     });
 
     yesBtn.addEventListener("click", () => {
@@ -153,16 +149,10 @@
 
     function showPage(pageId) {
       document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-      const nextPage = document.getElementById(pageId);
-      nextPage.classList.add("active");
-
-      // Trigger glow animation only on page3
-      if (pageId === "page3") {
-        const msg = document.getElementById("birthdayMsg");
-        msg.classList.add("fade-glow");
-      }
+      document.getElementById(pageId).classList.add("active");
     }
 
+   
     function startCountdown() {
       let time = 10;
       const counter = document.getElementById("countdown");
@@ -187,9 +177,9 @@
       heart.style.left = Math.random() * window.innerWidth + "px";
       heart.style.fontSize = (20 + Math.random() * 20) + "px";
       document.body.appendChild(heart);
+
       setTimeout(() => heart.remove(), 5000);
     }
-
     setInterval(createHeart, 500);
   </script>
 </body>
