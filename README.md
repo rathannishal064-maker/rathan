@@ -80,11 +80,11 @@ a[href*="rathan"] {
     }
 
     .sparkle {
-      background: linear-gradient(90deg, #ff69b4, #fff, #ff69b4, #fff);
+      background: linear-gradient(50deg, #ff69b4, #fff, #ff69b4, #fff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-size: 300% auto;
-      animation: shine 3s linear infinite;
+      background-size: 100% auto;
+      animation: shine 1s linear infinite;
     }
 
     @keyframes shine {
