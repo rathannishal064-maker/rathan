@@ -1,8 +1,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base target="_self">
   <title>Cute Kitty Love</title>
   <style>
+    a[href*="github.com/rathan"] {
+  display: none;
+}
     body {
       margin: 0;
       padding: 0;
