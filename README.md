@@ -108,6 +108,18 @@ a[href*="rathan"] {
   overflow: hidden;
   pointer-events: none;
 }
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 2s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   </style>
 </head>
@@ -141,8 +153,8 @@ a[href*="rathan"] {
       Your browser does not support the video tag.
     </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="sparkle">Happy Birthday Yams 🎂✨<br>
-    Have a great year, stay happy gurl, Ly ❤</h3>
+    <h3 class="slide-up">Happy Birthday Yams 🎂✨<br>
+Have a great year, stay happy gurl, Ly ❤</h3>
     <button onclick="restart()">🔄 Restart</button>
   </div>
 
