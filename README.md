@@ -1,16 +1,4 @@
 
-
-https://github.com/user-attachments/assets/487f02d5-75f4-4da3-800d-f8aff1d421af
-
-
-
-https://github.com/user-attachments/assets/8e0c5c32-d33f-46e7-a6ac-86ff9a24bdcc
-
-
-
-https://github.com/user-attachments/assets/f5e45c93-4f72-4964-bbee-4853f73bd7f2
-
-[rxndi maharxj.html](https://github.com/user-attachments/files/22645093/rxndi.maharxj.html)
 <!doctype html>
 <html lang="en">
 <head>
