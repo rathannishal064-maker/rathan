@@ -112,9 +112,9 @@
   Your browser does not support the video tag.
 </video>
     <h2>Happy Birthday Diya Ly ❤</h2>
-    <h3 class="sparkle">Happy Birthday Yams 🎂✨<br>
+    <h3 class="wave">Happy Birthday Yams 🎂✨<br>
     Have a great year, stay happy gurl, Ly ❤</h3>
-    <button onclick="restart()">🔄 Restart</button>
+    <button onclick="restart()">🔄Restart</button>
   </div>
 
   <script>
